@@ -45,9 +45,14 @@ export class TownCenter extends Building {
     super({
       type: 'TownCenter',
       maxHp: 2400,
+      attack: 5,
+      attackRange: 300,
+      attackSpeed: 1.5,
       visual: { shape: 'rect', width: 60, height: 60, color: config.team === 0 ? '#7f1d1d' : '#1e3a8a' },
       ...config
     });
+    this.tcAttackCooldown = 0;
+    this.tcTarget = null;
   }
 }
 

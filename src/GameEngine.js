@@ -190,12 +190,49 @@ export class GameEngine {
         this._processBuildingProduction(unit, dt);
       }
       
+      // TC 射箭逻辑
+      if (unit.type === 'TownCenter' && unit.isBuilt && unit.alive) {
+        unit.tcAttackCooldown -= dt;
+        const enemies = unit.team === 0 ? this.teamB : this.teamA;
+        // 寻找范围内最近的敌人（不含建筑）
+        let closest = null;
+        let closestDist = Infinity;
+        for (const e of enemies) {
+          if (!e.alive || e.isBuilding) continue;
+          const d = unit.distanceTo(e);
+          if (d <= unit.attackRange && d < closestDist) {
+            closest = e;
+            closestDist = d;
+          }
+        }
+        if (closest && unit.tcAttackCooldown <= 0) {
+          const dmg = Math.max(1, unit.attack - closest.armor);
+          closest.takeDamage(dmg, unit);
+          unit.tcAttackCooldown = unit.attackSpeed;
+          // 生成箭矢视觉事件
+          unit._lastAttackLog = {
+            attackerId: unit.id, attackerType: 'TownCenter',
+            targetId: closest.id, targetType: closest.type,
+            damage: dmg, killed: !closest.alive,
+            fromX: unit.x, fromY: unit.y,
+            toX: closest.x, toY: closest.y
+          };
+        }
+      }
+
       // 村民采集逻辑
       if (unit.type === 'Villager' && unit.state === 'GATHERING' && unit.resourceTarget) {
         unit.gatheringTimer += dt;
         if (unit.gatheringTimer >= unit.gatherRate) {
           unit.gatheringTimer = 0;
-          this.resources[unit.team][unit.resourceTarget.resourceType] += 2; // 加速资源获取基数
+          this.resources[unit.team][unit.resourceTarget.resourceType] += 2;
+        }
+        // 每5秒重新评估一次分配（让MacroAI重新指派采集方向）
+        if (!unit._regatherTimer) unit._regatherTimer = 0;
+        unit._regatherTimer += dt;
+        if (unit._regatherTimer >= 5) {
+          unit._regatherTimer = 0;
+          unit.state = 'IDLE'; // 回到IDLE，MacroAI下一帧会根据队列重新分派
         }
       }
 
