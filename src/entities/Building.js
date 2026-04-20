@@ -88,3 +88,26 @@ export class Stable extends Building {
     });
   }
 }
+
+export class House extends Building {
+  constructor(config) {
+    super({
+      type: 'House',
+      maxHp: 750,
+      visual: { shape: 'rect', width: 25, height: 25, color: config.team === 0 ? '#b45309' : '#1e40af' },
+      ...config
+    });
+  }
+}
+
+export class Farm extends Building {
+  constructor(config) {
+    super({
+      type: 'Farm',
+      maxHp: 400,
+      visual: { shape: 'rect', width: 35, height: 35, color: config.team === 0 ? '#166534' : '#065f46' },
+      ...config
+    });
+    this.farmTimer = 0;
+  }
+}

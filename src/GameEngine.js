@@ -19,7 +19,7 @@ import { Archer } from './entities/Archer.js';
 import { Horseman } from './entities/Horseman.js';
 import { MenAtArms } from './entities/MenAtArms.js';
 import { Crossbowman } from './entities/Crossbowman.js';
-import { TownCenter, Barracks, ArcheryRange, Stable } from './entities/Building.js';
+import { TownCenter, Barracks, ArcheryRange, Stable, House, Farm } from './entities/Building.js';
 import { Villager } from './entities/Villager.js';
 import { ResourceNode } from './entities/ResourceNode.js';
 import { StateMachine } from './ai/StateMachine.js';
@@ -27,7 +27,9 @@ import { Commander } from './ai/Commander.js';
 import { MicroAI } from './ai/MicroAI.js';
 import { MacroAI } from './ai/MacroAI.js';
 
-export const POPULATION_CAP = 50;
+export const POPULATION_HARD_CAP = 50; // 绝对上限
+export const BASE_POP_CAP = 10;        // 初始人口上限
+export const POP_PER_HOUSE = 5;         // 每个房子增加的人口上限
 
 export class GameEngine {
   constructor(config = {}) {
@@ -92,12 +94,17 @@ export class GameEngine {
     this.winner = null;
     this.battleLog = [];
 
+    this._cleanupTimer = 0; // 死亡单位清理计时器
+
     // 随机生成中央阻挡物
     this._setupObstacles();
 
     // 初始化双方基地
     this._setupBase(0);
     this._setupBase(1);
+
+    // 生成中立争夺资源点（地图中央）
+    this._setupNeutralResources();
 
     this._log('BATTLE_START', `战斗开始！目标阵容：红方 ${JSON.stringify(armyTargetA)}, 蓝方 ${JSON.stringify(armyTargetB)}`);
   }
@@ -118,10 +125,10 @@ export class GameEngine {
     // 2. Initial villagers removed (factions must produce them from TC)
     const resSpawnDir = team === 0 ? -1 : 1; // 资源点放基地后面
 
-    // 3. 生成资源点 (Food, Wood, Gold)
-    this.resourceNodes.push(new ResourceNode({ team: team, x: baseX + resSpawnDir * 60, y: baseY - 60, resourceType: 'wood', visual: { shape: 'circle', radius: 15, color: '#166534' } }));
-    this.resourceNodes.push(new ResourceNode({ team: team, x: baseX + resSpawnDir * 60, y: baseY, resourceType: 'food', visual: { shape: 'circle', radius: 12, color: '#f87171' } }));
-    this.resourceNodes.push(new ResourceNode({ team: team, x: baseX + resSpawnDir * 60, y: baseY + 60, resourceType: 'gold', visual: { shape: 'circle', radius: 12, color: '#facc15' } }));
+    // 3. 生成资源点 (Food, Wood, Gold) — 有限储量
+    this.resourceNodes.push(new ResourceNode({ team: team, x: baseX + resSpawnDir * 60, y: baseY - 60, resourceType: 'wood', remaining: 2000, visual: { shape: 'circle', radius: 15, color: '#166534' } }));
+    this.resourceNodes.push(new ResourceNode({ team: team, x: baseX + resSpawnDir * 60, y: baseY, resourceType: 'food', remaining: 1500, visual: { shape: 'circle', radius: 12, color: '#f87171' } }));
+    this.resourceNodes.push(new ResourceNode({ team: team, x: baseX + resSpawnDir * 60, y: baseY + 60, resourceType: 'gold', remaining: 800, visual: { shape: 'circle', radius: 12, color: '#facc15' } }));
   }
 
   /**
@@ -222,17 +229,33 @@ export class GameEngine {
 
       // 村民采集逻辑
       if (unit.type === 'Villager' && unit.state === 'GATHERING' && unit.resourceTarget) {
+        // 资源点已耗尽 → 回到IDLE重新分配
+        if (!unit.resourceTarget.alive) {
+          unit.state = 'IDLE';
+          unit.resourceTarget = null;
+          continue;
+        }
         unit.gatheringTimer += dt;
         if (unit.gatheringTimer >= unit.gatherRate) {
           unit.gatheringTimer = 0;
-          this.resources[unit.team][unit.resourceTarget.resourceType] += 2;
+          const gathered = unit.resourceTarget.gather(2);
+          this.resources[unit.team][unit.resourceTarget.resourceType] += gathered;
         }
         // 每5秒重新评估一次分配（让MacroAI重新指派采集方向）
         if (!unit._regatherTimer) unit._regatherTimer = 0;
         unit._regatherTimer += dt;
         if (unit._regatherTimer >= 5) {
           unit._regatherTimer = 0;
-          unit.state = 'IDLE'; // 回到IDLE，MacroAI下一帧会根据队列重新分派
+          unit.state = 'IDLE';
+        }
+      }
+
+      // 农田自动产食物
+      if (unit.type === 'Farm' && unit.isBuilt && unit.alive) {
+        unit.farmTimer += dt;
+        if (unit.farmTimer >= 1.0) {
+          unit.farmTimer = 0;
+          this.resources[unit.team].food += 1;
         }
       }
 
@@ -264,6 +287,13 @@ export class GameEngine {
 
     // 3. 简单碰撞分离（防止单位重叠）
     this._resolveCollisions();
+
+    // 3.5 定期清理死亡单位（每5秒）
+    this._cleanupTimer += dt;
+    if (this._cleanupTimer >= 5) {
+      this._cleanupTimer = 0;
+      this._cleanupDead();
+    }
 
     // 4. 检测胜负
     this._checkVictory();
@@ -301,10 +331,10 @@ export class GameEngine {
     const UnitClass = Classes[typeKey];
     if (!UnitClass) return;
 
-    // Pop cap check handles correctly inside MacroAI before queuing, but double check
+    // Pop cap check
     const myPop = this._getPopulation(building.team);
-    if (myPop >= POPULATION_CAP) {
-       // Supply blocked (refund logic ignored in MVP for simplicity, just stop)
+    const myPopCap = this._getPopulationCap(building.team);
+    if (myPop >= myPopCap) {
        return;
     }
 
@@ -322,7 +352,13 @@ export class GameEngine {
 
   _getPopulation(team) {
     const list = team === 0 ? this.teamA : this.teamB;
-    return list.filter(u => u.alive && !u.isBuilding).length; // 建筑不占人口
+    return list.filter(u => u.alive && !u.isBuilding).length;
+  }
+
+  _getPopulationCap(team) {
+    const list = team === 0 ? this.teamA : this.teamB;
+    const houseCount = list.filter(u => u.type === 'House' && u.isBuilt && u.alive).length;
+    return Math.min(POPULATION_HARD_CAP, BASE_POP_CAP + houseCount * POP_PER_HOUSE);
   }
 
   /**
@@ -479,6 +515,43 @@ export class GameEngine {
   /**
    * 获取当前所有单位快照（供 Renderer 读取）
    */
+  /**
+   * 清理死亡的非建筑单位，释放内存
+   */
+  _cleanupDead() {
+    this.units = this.units.filter(u => u.alive || (u.isBuilding && u.alive));
+    this.teamA = this.teamA.filter(u => u.alive);
+    this.teamB = this.teamB.filter(u => u.alive);
+    // 清理耗尽的资源点
+    this.resourceNodes = this.resourceNodes.filter(r => r.alive);
+  }
+
+  /**
+   * 生成中立争夺资源点
+   */
+  _setupNeutralResources() {
+    const cx = this.width / 2;
+    const cy = this.height / 2;
+    // 中央大金矿
+    this.resourceNodes.push(new ResourceNode({
+      team: -1, x: cx, y: cy - 80, resourceType: 'gold',
+      remaining: 1200,
+      visual: { shape: 'circle', radius: 18, color: '#fbbf24' }
+    }));
+    // 中央食物堆
+    this.resourceNodes.push(new ResourceNode({
+      team: -1, x: cx, y: cy + 80, resourceType: 'food',
+      remaining: 2000,
+      visual: { shape: 'circle', radius: 16, color: '#fb923c' }
+    }));
+    // 中央木材林
+    this.resourceNodes.push(new ResourceNode({
+      team: -1, x: cx - 100, y: cy, resourceType: 'wood',
+      remaining: 1500,
+      visual: { shape: 'circle', radius: 14, color: '#22c55e' }
+    }));
+  }
+
   getSnapshot() {
     return {
       tick: this.tickCount,
@@ -489,8 +562,8 @@ export class GameEngine {
       resourceNodes: this.resourceNodes.map(r => r.toSnapshot()),
       teamAAlive: this._getPopulation(0),
       teamBAlive: this._getPopulation(1),
-      teamATotal: POPULATION_CAP,
-      teamBTotal: POPULATION_CAP,
+      teamAPopCap: this._getPopulationCap(0),
+      teamBPopCap: this._getPopulationCap(1),
       resources: this.resources,
       obstacles: this.obstacles,
       events: this.currentEvents || [],

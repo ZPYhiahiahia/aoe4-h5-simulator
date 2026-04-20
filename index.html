@@ -31,6 +31,10 @@
           <button class="control-btn" onclick="window.engine && window.engine.queueManualTask(0, 'Archer')">弓兵 (30肉 50木)</button>
           <button class="control-btn" onclick="window.engine && window.engine.queueManualTask(0, 'Crossbowman')">弩手 (80肉 40金)</button>
         </div>
+        <div style="display: flex; gap: 5px; margin-bottom: 15px;">
+          <button class="control-btn" style="flex:1; background:#b45309;" onclick="window.engine && window.engine.queueManualTask(0, 'House')">🏠 房屋 (50木)</button>
+          <button class="control-btn" style="flex:1; background:#166534;" onclick="window.engine && window.engine.queueManualTask(0, 'Farm')">🌾 农田 (75木)</button>
+        </div>
         <div style="border-top: 1px solid #333; padding-top: 10px;">
           <label style="font-size: 13px;">生产队列 (<span id="queue-length">0</span>)</label>
           <div id="manual-queue-display" style="display: flex; gap: 4px; flex-wrap: wrap; margin-top: 5px; min-height: 24px; padding: 4px; background: rgba(0,0,0,0.2); border-radius: 4px;">
@@ -102,7 +106,8 @@
       <h3>📜 战斗日志</h3>
       <div id="log-panel"></div>
     </div>
-    <script src="src/ai/Commander.js?v=2"></script>
-    <script type="module" src="src/main.js?v=2"></script>
+  </div>
+
+  <script type="module" src="src/main.js?v=4"></script>
 </body>
 </html>

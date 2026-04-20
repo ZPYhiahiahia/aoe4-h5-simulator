@@ -1,5 +1,5 @@
-import { Barracks, ArcheryRange, Stable } from '../entities/Building.js';
-import { POPULATION_CAP } from '../GameEngine.js'; // 我们在 GameEngine 中 export
+import { Barracks, ArcheryRange, Stable, House, Farm } from '../entities/Building.js';
+import { POPULATION_HARD_CAP, BASE_POP_CAP, POP_PER_HOUSE } from '../GameEngine.js';
 
 const COSTS = {
   Villager: { food: 50, wood: 0, gold: 0, time: 1.5 },
@@ -11,7 +11,9 @@ const COSTS = {
   Crossbowman: { food: 80, wood: 0, gold: 40, time: 3.5 },
   Barracks: { food: 0, wood: 150, gold: 0, time: 3 },
   ArcheryRange: { food: 0, wood: 150, gold: 0, time: 3 },
-  Stable: { food: 0, wood: 150, gold: 0, time: 3 }
+  Stable: { food: 0, wood: 150, gold: 0, time: 3 },
+  House: { food: 0, wood: 50, gold: 0, time: 2 },
+  Farm: { food: 0, wood: 75, gold: 0, time: 2.5 }
 };
 
 export class MacroAI {
@@ -50,7 +52,9 @@ export class MacroAI {
     const crossbowCount = myUnits.filter(u => u.type === 'Crossbowman' && u.alive).length;
 
     // 当前总人口（不含建筑地基，建筑不算人口)
-    const currentPop = myUnits.filter(u => u.alive && !u.isBuilding).length; // 包括村民和兵
+    const currentPop = myUnits.filter(u => u.alive && !u.isBuilding).length;
+    const houseCount = myUnits.filter(u => u.type === 'House' && u.isBuilt && u.alive).length;
+    const popCap = Math.min(POPULATION_HARD_CAP, BASE_POP_CAP + houseCount * POP_PER_HOUSE);
 
     // 如果是手动模式，生成虚拟的 armyTarget
     let t = armyTarget;
@@ -112,7 +116,7 @@ export class MacroAI {
             let resType = 'food';
             if (seed >= fW) { resType = seed >= fW + wW ? 'gold' : 'wood'; }
             
-            const targetNode = resourceNodes.find(r => r.resourceType === resType && r.team === v.team);
+            const targetNode = resourceNodes.find(r => r.alive && r.resourceType === resType && (r.team === v.team || r.team === -1));
             if (targetNode) {
                 v.resourceTarget = targetNode; // <--- Fix: 绑定目标
                 const dist = v.distanceTo(targetNode);
@@ -136,12 +140,48 @@ export class MacroAI {
         }
     }
 
-    // --- 建造逻辑区 (不能超过人口上限) ---
-    const canBuild = currentPop < POPULATION_CAP;
+    // --- 建造逻辑区 (Pop cap 检查) ---
+    const canBuild = currentPop < popCap;
+
+    // 1.5 自动造房子（快碎人口上限时）
+    if (currentPop >= popCap - 2 && popCap < POPULATION_HARD_CAP) {
+        const housePending = myUnits.filter(u => u.type === 'House' && !u.isBuilt).length;
+        if (housePending === 0) {
+            const builder = villagers.find(v => v.state === 'IDLE' || v.state === 'SEEKING' || v.state === 'GATHERING');
+            if (MacroAI._canAfford(myResources, COSTS.House) && builder) {
+                MacroAI._spend(myResources, COSTS.House);
+                const signX = builder.team === 0 ? 1 : -1;
+                const bx = tc ? tc.x + signX * (60 + Math.random()*40) : builder.x + signX * 30;
+                const by = tc ? tc.y + (Math.random()-0.5)*160 : builder.y + 30;
+                const f = engine.placeFoundation(builder.team, House, bx, by);
+                builder.buildTarget = f;
+                builder.state = 'SEEKING_BUILD';
+            }
+        }
+    }
+
+    // 1.6 自动造农田（当自然食物耗尽后）
+    const naturalFood = resourceNodes.find(r => r.alive && r.resourceType === 'food' && (r.team === team || r.team === -1));
+    if (!naturalFood) {
+        const farmCount = myUnits.filter(u => u.type === 'Farm' && u.alive).length;
+        const farmPending = myUnits.filter(u => u.type === 'Farm' && !u.isBuilt).length;
+        if (farmCount < 4 && farmPending === 0) { // 最多自动造 4 个农田
+            const builder = villagers.find(v => v.state === 'IDLE' || v.state === 'SEEKING' || v.state === 'GATHERING');
+            if (MacroAI._canAfford(myResources, COSTS.Farm) && builder) {
+                MacroAI._spend(myResources, COSTS.Farm);
+                const signX = builder.team === 0 ? 1 : -1;
+                const bx = tc ? tc.x + signX * (50 + Math.random() * 80) : builder.x;
+                const by = tc ? tc.y + 80 + farmCount * 40 : builder.y + 40;
+                const f = engine.placeFoundation(builder.team, Farm, bx, by);
+                builder.buildTarget = f;
+                builder.state = 'SEEKING_BUILD';
+            }
+        }
+    }
 
     // 2. 城镇中心：生产村民 (上限设为保持20个村民打工，为了给兵腾出人口)
     if (tc && tc.alive && tc.isBuilt && tc.productionQueue.length === 0 && !tc.currentTask && canBuild) {
-        if (villagers.length < Math.min(20, POPULATION_CAP / 2)) {
+        if (villagers.length < Math.min(20, popCap / 2)) {
            if (MacroAI._canAfford(myResources, COSTS.Villager)) {
                MacroAI._spend(myResources, COSTS.Villager);
                tc.queueUnit('Villager', COSTS.Villager, COSTS.Villager.time);
@@ -155,15 +195,32 @@ export class MacroAI {
     MacroAI._checkAndBuild(myUnits, myResources, villagers, engine, t.knights + t.horsemen, Stable, COSTS.Stable, tc);
 
     // 4. 军事建筑：造兵分摊到各个空闲排期的建筑中
-    if (canBuild) {
-        if (armyTarget.isManual) {
-            // 手动模式：按队列顺序生产，遇到能造的就造并出队
-            const mq = armyTarget.manualQueue;
-            if (mq && mq.length > 0) {
-                const nextType = mq[0];
-                const cost = COSTS[nextType];
-                
-                // 判断归属的建筑类型
+    if (armyTarget.isManual) {
+        // 手动模式：按队列顺序处理
+        const mq = armyTarget.manualQueue;
+        if (mq && mq.length > 0) {
+            const nextType = mq[0];
+            const cost = COSTS[nextType];
+            
+            // 判断是建筑还是兵种
+            if (nextType === 'House' || nextType === 'Farm') {
+                // 建筑类型：派村民去造
+                if (MacroAI._canAfford(myResources, cost)) {
+                    const builder = villagers.find(v => v.state === 'IDLE' || v.state === 'SEEKING' || v.state === 'GATHERING');
+                    if (builder) {
+                        MacroAI._spend(myResources, cost);
+                        const BuildingClass = nextType === 'House' ? House : Farm;
+                        const signX = builder.team === 0 ? 1 : -1;
+                        const bx = tc ? tc.x + signX * (60 + Math.random()*60) : builder.x + signX * 30;
+                        const by = tc ? tc.y + (Math.random()-0.5)*160 : builder.y + 30;
+                        const f = engine.placeFoundation(builder.team, BuildingClass, bx, by);
+                        builder.buildTarget = f;
+                        builder.state = 'SEEKING_BUILD';
+                        mq.shift();
+                    }
+                }
+            } else if (canBuild) {
+                // 兵种类型：需要对应建筑生产
                 let facType = 'Barracks';
                 if (nextType === 'Archer' || nextType === 'Crossbowman') facType = 'ArcheryRange';
                 if (nextType === 'Knight' || nextType === 'Horseman') facType = 'Stable';
@@ -172,10 +229,11 @@ export class MacroAI {
                 if (idleBuilding && MacroAI._canAfford(myResources, cost)) {
                     MacroAI._spend(myResources, cost);
                     idleBuilding.queueUnit(nextType, cost, cost.time);
-                    mq.shift(); // 消费掉这个排队
+                    mq.shift();
                 }
             }
-        } else {
+        }
+    } else if (canBuild) {
             // 自动对照组模式：配平分摊
             const factories = [
                 { list: myUnits.filter(u => u.type === 'Barracks' && u.isBuilt), target: t.spearmen, type: 'Spearman', cost: COSTS.Spearman, currentCount: spearmenCount },

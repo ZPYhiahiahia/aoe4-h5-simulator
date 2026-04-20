@@ -64,9 +64,8 @@ export class Renderer {
    */
   render(snapshot) {
     // 0. 绘制资源点
-    if (!this.resourcesDrawn && snapshot.resourceNodes) {
+    if (snapshot.resourceNodes) {
       this._drawResourceNodes(snapshot.resourceNodes);
-      this.resourcesDrawn = true;
     }
 
     // 1. 绘制障碍物（仅需一次）
@@ -160,12 +159,26 @@ export class Renderer {
   }
 
   _drawResourceNodes(nodes) {
+    // 清除旧的资源点绘制
+    if (this._resourceGraphics) {
+      this.bgLayer.removeChild(this._resourceGraphics);
+      this._resourceGraphics.destroy();
+    }
     const g = new PIXI.Graphics();
     for (const node of nodes) {
-      g.beginFill(PIXI.utils.string2hex(node.visual.color), 0.8);
+      if (!node.alive) continue;
+      const alpha = 0.4 + 0.6 * (node.remaining / node.maxRemaining);
+      g.beginFill(PIXI.utils.string2hex(node.visual.color), alpha);
       g.drawCircle(node.x, node.y, node.visual.radius);
       g.endFill();
+      // 中立资源加星号标记
+      if (node.team === -1) {
+        g.lineStyle(1, 0xffffff, 0.5);
+        g.drawCircle(node.x, node.y, node.visual.radius + 3);
+        g.lineStyle(0);
+      }
     }
+    this._resourceGraphics = g;
     this.bgLayer.addChild(g);
   }
 
@@ -243,8 +256,8 @@ export class Renderer {
   }
 
   _updateHUD(snapshot) {
-    this.hudRed.text = `🔴 RED   Pop: ${snapshot.teamAAlive}/${snapshot.teamATotal}`;
-    this.hudBlue.text = `🔵 BLUE  Pop: ${snapshot.teamBAlive}/${snapshot.teamBTotal}`;
+    this.hudRed.text = `🔴 RED   Pop: ${snapshot.teamAAlive}/${snapshot.teamAPopCap || 10}`;
+    this.hudBlue.text = `🔵 BLUE  Pop: ${snapshot.teamBAlive}/${snapshot.teamBPopCap || 10}`;
     
     // UI Resources
     const resA = snapshot.resources[0];

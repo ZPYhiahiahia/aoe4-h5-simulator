@@ -66,7 +66,8 @@ function gameLoop(timestamp) {
     // 简单映射名字到单字
     const symbolMap = {
       'Knight': '骑', 'Horseman': '肉', 'Spearman': '枪', 
-      'MenAtArms': '武', 'Archer': '弓', 'Crossbowman': '弩'
+      'MenAtArms': '武', 'Archer': '弓', 'Crossbowman': '弩',
+      'House': '🏠', 'Farm': '🌾'
     };
     
     manualQueueDisplay.innerHTML = mq.map(type => 
