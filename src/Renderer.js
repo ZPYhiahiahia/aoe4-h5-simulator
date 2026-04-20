@@ -99,16 +99,21 @@ export class Renderer {
       }
     }
 
-    // 3. 绘制攻击线
-    this.linesGraphics.clear();
-    for (const unitData of snapshot.units) {
-      if (!unitData.alive || unitData.targetId === null || unitData.state !== 'ATTACKING') continue;
-      const target = snapshot.units.find(u => u.id === unitData.targetId);
-      if (target && target.alive) {
-        const color = unitData.team === 0 ? 0xff5050 : 0x508cff;
-        this.linesGraphics.lineStyle(1, color, 0.4);
-        this.linesGraphics.moveTo(unitData.x, unitData.y);
-        this.linesGraphics.lineTo(target.x, target.y);
+    // 3. 绘制攻击线（每3帧刷新一次，降低GPU开销）
+    if (snapshot.tick % 3 === 0) {
+      this.linesGraphics.clear();
+      // 建立ID快查表避免 O(n²) find
+      const unitMap = new Map();
+      for (const u of snapshot.units) { if (u.alive) unitMap.set(u.id, u); }
+      for (const unitData of snapshot.units) {
+        if (!unitData.alive || unitData.targetId === null || unitData.state !== 'ATTACKING') continue;
+        const target = unitMap.get(unitData.targetId);
+        if (target) {
+          const color = unitData.team === 0 ? 0xff5050 : 0x508cff;
+          this.linesGraphics.lineStyle(1, color, 0.4);
+          this.linesGraphics.moveTo(unitData.x, unitData.y);
+          this.linesGraphics.lineTo(target.x, target.y);
+        }
       }
     }
 
@@ -120,7 +125,9 @@ export class Renderer {
           const target = snapshot.units.find(u => u.id === ev.targetId);
           if (target) {
             this._addDamageText(target.x, target.y - 15, ev.damage, ev.killed);
-            for (let i = 0; i < 4 + Math.random() * 4; i++) {
+            // 减少粒子数量，降低GPU压力
+            const particleCount = 2 + Math.floor(Math.random() * 2);
+            for (let i = 0; i < particleCount; i++) {
               this._addParticle(target.x, target.y, 0xef4444);
             }
           }

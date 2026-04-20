@@ -16,16 +16,24 @@ const COSTS = {
 
 export class MacroAI {
   /**
-   * 宏观运营 AI 更新
-   * @param {Array} myUnits 我方的所有单位
-   * @param {Object} myResources 我方当前资源 { food, wood, gold }
-   * @param {Object} armyTarget 最终目标配兵数量 { spearmen, archers, knights }
-   * @param {Number} dt 
-   * @param {Array} resourceNodes 地图上的资源点
-   * @param {GameEngine} engine 引擎引用（用于下达建筑地基命令）
+   * 宏观运营 AI 更新（节流：每0.5秒执行一次，不需要每帧跑）
    */
+  static _timers = new Map(); // team -> accumulated dt
+
   static update(myUnits, myResources, armyTarget, dt, resourceNodes, engine) {
     if (!myUnits || myUnits.length === 0) return;
+
+    // 节流：只有累计超过0.5秒才真正执行宏观决策
+    const team = myUnits[0]?.team ?? 0;
+    const accum = (MacroAI._timers.get(team) || 0) + dt;
+    if (accum < 0.5) {
+      MacroAI._timers.set(team, accum);
+      // 但村民的移动和建造逻辑需要每帧更新
+      MacroAI._updateVillagerMovement(myUnits, dt);
+      return;
+    }
+    MacroAI._timers.set(team, 0);
+    const tickDt = accum; // 使用累计时间
     
     // 分类统计
     const tc = myUnits.find(u => u.type === 'TownCenter');
@@ -228,5 +236,43 @@ export class MacroAI {
       res.food -= cost.food;
       res.wood -= cost.wood;
       res.gold -= cost.gold;
+  }
+
+  /**
+   * 每帧运行的轻量村民移动更新（不做决策，只处理已有指令的移动和建造进度）
+   */
+  static _updateVillagerMovement(myUnits, dt) {
+    for (const v of myUnits) {
+      if (!v.alive || v.type !== 'Villager') continue;
+
+      if (v.state === 'SEEKING_BUILD' && v.buildTarget && !v.buildTarget.isBuilt) {
+        if (v.distanceTo(v.buildTarget) > 30) {
+          v.moveToward(v.buildTarget.x, v.buildTarget.y, dt);
+        } else {
+          v.state = 'BUILDING';
+        }
+      }
+
+      if (v.state === 'BUILDING' && v.buildTarget && !v.buildTarget.isBuilt) {
+        v.buildTarget.hp += (v.buildTarget.maxHp / COSTS[v.buildTarget.type].time) * dt;
+        if (v.buildTarget.hp >= v.buildTarget.maxHp) {
+          v.buildTarget.hp = v.buildTarget.maxHp;
+          v.buildTarget.isBuilt = true;
+          v.state = 'IDLE';
+          v.buildTarget = null;
+        }
+      } else if (v.state === 'BUILDING') {
+        v.state = 'IDLE';
+        v.buildTarget = null;
+      }
+
+      if (v.state === 'SEEKING' && v.resourceTarget) {
+        if (v.distanceTo(v.resourceTarget) > 20) {
+          v.moveToward(v.resourceTarget.x, v.resourceTarget.y, dt);
+        } else {
+          v.state = 'GATHERING';
+        }
+      }
+    }
   }
 }
