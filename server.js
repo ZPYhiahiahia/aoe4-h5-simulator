@@ -34,6 +34,8 @@ app.get('/api/snapshot', (req, res) => {
         // Augment with things the UI needs that aren't natively in the renderer snapshot
         snap.battleLog = engine.battleLog;
         snap.manualQueues = { 0: engine.armyTargetA.manualQueue, 1: [] };
+        snap.speed = engine.speed;
+        snap.paused = engine.paused;
         res.json(snap);
     } catch (e) {
         res.status(500).json({ error: e.message });
@@ -51,6 +53,8 @@ app.get('/api/state', (req, res) => {
         elapsedSeconds: engine.elapsedTime.toFixed(1),
         gameOver: engine.gameOver,
         winner: engine.winner,
+        speed: engine.speed,
+        paused: engine.paused,
         team0_Red: {
             resources: snap.resources[0],
             popCap: snap.teamAPopCap,
@@ -94,6 +98,21 @@ app.post('/api/command', (req, res) => {
     if (action === 'queueManualTask') {
         engine.queueManualTask(team, type);
         res.json({ status: 'ok', msg: `Queued ${type} for team ${team}` });
+    } else {
+        res.status(400).json({ error: 'Unknown action' });
+    }
+});
+
+// 4. Engine Control API (For LLM / Playback speed / Pause)
+app.post('/api/control', (req, res) => {
+    const { action, value } = req.body;
+    
+    if (action === 'speed') {
+        engine.speed = Number(value);
+        res.json({ status: 'ok', speed: engine.speed });
+    } else if (action === 'togglePause') {
+        engine.paused = !engine.paused;
+        res.json({ status: 'ok', paused: engine.paused });
     } else {
         res.status(400).json({ error: 'Unknown action' });
     }

@@ -83,15 +83,28 @@ window.engine = {
     }
 };
 
-// Expose a stub startBattle if html still calls it
 window.startBattle = () => {
     console.log("Battle automatically started on the backend server.");
 };
-window.togglePause = () => {
-    console.log("Pause logic not implemented in v1 backend.");
+window.togglePause = async () => {
+    try {
+        const rs = await fetch('/api/control', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ action: 'togglePause' })
+        });
+        const data = await rs.json();
+        document.getElementById('btn-pause').textContent = data.paused ? '▶ 继续' : '⏸ 暂停';
+    } catch (e) { console.error(e); }
 }
-window.setSpeed = () => {
-    console.log("Speed logic fixed in backend.");
+window.setSpeed = async (multiplier) => {
+    try {
+        await fetch('/api/control', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ action: 'speed', value: multiplier })
+        });
+    } catch (e) { console.error(e); }
 }
 
 // Start polling

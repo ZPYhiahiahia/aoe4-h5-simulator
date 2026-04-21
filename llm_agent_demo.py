@@ -25,8 +25,19 @@ def send_command(team, unit_type):
         print(f"Error sending command: {e}")
         return None
 
+def set_engine_speed(speed):
+    try:
+        payload = {"action": "speed", "value": speed}
+        requests.post(f"{BASE_URL}/api/control", json=payload)
+        print(f"Engine speed set to {speed}x")
+    except Exception as e:
+        print(f"Error changing speed: {e}")
+
 def main():
     print("🤖 Agent Connected. Polling simulation state...")
+    
+    # Optional: Slow down the game to give the LLM time to 'think'
+    set_engine_speed(0.2) # 1 real second = 0.2 simulated seconds
     
     # Simple reflex agent loop
     while True:
