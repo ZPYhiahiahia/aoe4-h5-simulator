@@ -258,7 +258,6 @@ export class MacroAI {
             }
             }
         }
-    }
     
     // 5. 地基自建逻辑被移除，改为由村民敲建筑（BUILDING）
   }

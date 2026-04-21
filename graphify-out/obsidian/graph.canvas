@@ -1,0 +1,2319 @@
+{
+  "nodes": [
+    {
+      "id": "g0",
+      "type": "group",
+      "label": "Game Engine Core",
+      "x": 0,
+      "y": 0,
+      "width": 1100,
+      "height": 920,
+      "color": "1"
+    },
+    {
+      "id": "n_gameengine_gameengine_checkvictory",
+      "type": "file",
+      "file": "graphify/obsidian/._checkVictory().md",
+      "x": 20,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_gameengine_gameengine_cleanupdead",
+      "type": "file",
+      "file": "graphify/obsidian/._cleanupDead().md",
+      "x": 220,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_gameengine_gameengine_generatesummary",
+      "type": "file",
+      "file": "graphify/obsidian/._generateSummary().md",
+      "x": 420,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_gameengine_gameengine_getpopulation",
+      "type": "file",
+      "file": "graphify/obsidian/._getPopulation().md",
+      "x": 20,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_gameengine_gameengine_getpopulationcap",
+      "type": "file",
+      "file": "graphify/obsidian/._getPopulationCap().md",
+      "x": 220,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_gameengine_gameengine_log",
+      "type": "file",
+      "file": "graphify/obsidian/._log().md",
+      "x": 420,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_gameengine_gameengine_processbuildingproduction",
+      "type": "file",
+      "file": "graphify/obsidian/._processBuildingProduction().md",
+      "x": 20,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_gameengine_gameengine_resolvecollisions",
+      "type": "file",
+      "file": "graphify/obsidian/._resolveCollisions().md",
+      "x": 220,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_gameengine_gameengine_setupbase",
+      "type": "file",
+      "file": "graphify/obsidian/._setupBase().md",
+      "x": 420,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_gameengine_gameengine_setupneutralresources",
+      "type": "file",
+      "file": "graphify/obsidian/._setupNeutralResources().md",
+      "x": 20,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_gameengine_gameengine_setupobstacles",
+      "type": "file",
+      "file": "graphify/obsidian/._setupObstacles().md",
+      "x": 220,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_gameengine_gameengine_spawnarmy",
+      "type": "file",
+      "file": "graphify/obsidian/._spawnArmy().md",
+      "x": 420,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_gameengine_gameengine_spawnunitfrombuilding",
+      "type": "file",
+      "file": "graphify/obsidian/._spawnUnitFromBuilding().md",
+      "x": 20,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_gameengine_gameengine_teamstats",
+      "type": "file",
+      "file": "graphify/obsidian/._teamStats().md",
+      "x": 220,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_gameengine_gameengine_constructor",
+      "type": "file",
+      "file": "graphify/obsidian/.constructor()_1.md",
+      "x": 420,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_gameengine_gameengine_getsnapshot",
+      "type": "file",
+      "file": "graphify/obsidian/.getSnapshot().md",
+      "x": 20,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_gameengine_gameengine_queuemanualtask",
+      "type": "file",
+      "file": "graphify/obsidian/.queueManualTask().md",
+      "x": 220,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_gameengine_gameengine_setupbattle",
+      "type": "file",
+      "file": "graphify/obsidian/.setupBattle().md",
+      "x": 420,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_gameengine_gameengine_update",
+      "type": "file",
+      "file": "graphify/obsidian/.update().md",
+      "x": 20,
+      "y": 560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_gameengine_gameengine",
+      "type": "file",
+      "file": "graphify/obsidian/GameEngine.md",
+      "x": 220,
+      "y": 560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_users_2py_projects_aoe4simulator_h5_src_gameengine_js",
+      "type": "file",
+      "file": "graphify/obsidian/GameEngine.js.md",
+      "x": 420,
+      "y": 560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_main_gameloop",
+      "type": "file",
+      "file": "graphify/obsidian/gameLoop().md",
+      "x": 20,
+      "y": 640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g1",
+      "type": "group",
+      "label": "Base Unit & State Machine",
+      "x": 1180,
+      "y": 0,
+      "width": 880,
+      "height": 620,
+      "color": "2"
+    },
+    {
+      "id": "n_statemachine_statemachine_findbesttarget",
+      "type": "file",
+      "file": "graphify/obsidian/._findBestTarget().md",
+      "x": 1200,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_statemachine_statemachine_handleattacking",
+      "type": "file",
+      "file": "graphify/obsidian/._handleAttacking().md",
+      "x": 1400,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_statemachine_statemachine_handleidle",
+      "type": "file",
+      "file": "graphify/obsidian/._handleIdle().md",
+      "x": 1600,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_statemachine_statemachine_handleseeking",
+      "type": "file",
+      "file": "graphify/obsidian/._handleSeeking().md",
+      "x": 1200,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_baseunit_baseunit_calculatedamage",
+      "type": "file",
+      "file": "graphify/obsidian/.calculateDamage().md",
+      "x": 1400,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_baseunit_baseunit_constructor",
+      "type": "file",
+      "file": "graphify/obsidian/.constructor()_13.md",
+      "x": 1600,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_baseunit_baseunit_isinrange",
+      "type": "file",
+      "file": "graphify/obsidian/.isInRange().md",
+      "x": 1200,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_baseunit_baseunit_movetoward",
+      "type": "file",
+      "file": "graphify/obsidian/.moveToward().md",
+      "x": 1400,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_baseunit_baseunit_takedamage",
+      "type": "file",
+      "file": "graphify/obsidian/.takeDamage().md",
+      "x": 1600,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_baseunit_baseunit_tosnapshot",
+      "type": "file",
+      "file": "graphify/obsidian/.toSnapshot()_2.md",
+      "x": 1200,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_statemachine_statemachine_update",
+      "type": "file",
+      "file": "graphify/obsidian/.update()_2.md",
+      "x": 1400,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_baseunit_baseunit",
+      "type": "file",
+      "file": "graphify/obsidian/BaseUnit.md",
+      "x": 1600,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_users_2py_projects_aoe4simulator_h5_src_entities_baseunit_js",
+      "type": "file",
+      "file": "graphify/obsidian/BaseUnit.js.md",
+      "x": 1200,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_statemachine_statemachine",
+      "type": "file",
+      "file": "graphify/obsidian/StateMachine.md",
+      "x": 1400,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_users_2py_projects_aoe4simulator_h5_src_ai_statemachine_js",
+      "type": "file",
+      "file": "graphify/obsidian/StateMachine.js.md",
+      "x": 1600,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g2",
+      "type": "group",
+      "label": "Renderer",
+      "x": 2140,
+      "y": 0,
+      "width": 880,
+      "height": 620,
+      "color": "3"
+    },
+    {
+      "id": "n_renderer_renderer_adddamagetext",
+      "type": "file",
+      "file": "graphify/obsidian/._addDamageText().md",
+      "x": 2160,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_renderer_renderer_addparticle",
+      "type": "file",
+      "file": "graphify/obsidian/._addParticle().md",
+      "x": 2360,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_renderer_renderer_createunitsprite",
+      "type": "file",
+      "file": "graphify/obsidian/._createUnitSprite().md",
+      "x": 2560,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_renderer_renderer_drawgrid",
+      "type": "file",
+      "file": "graphify/obsidian/._drawGrid().md",
+      "x": 2160,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_renderer_renderer_drawobstacles",
+      "type": "file",
+      "file": "graphify/obsidian/._drawObstacles().md",
+      "x": 2360,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_renderer_renderer_drawresourcenodes",
+      "type": "file",
+      "file": "graphify/obsidian/._drawResourceNodes().md",
+      "x": 2560,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_renderer_renderer_inithud",
+      "type": "file",
+      "file": "graphify/obsidian/._initHUD().md",
+      "x": 2160,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_renderer_renderer_updateeffects",
+      "type": "file",
+      "file": "graphify/obsidian/._updateEffects().md",
+      "x": 2360,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_renderer_renderer_updatehud",
+      "type": "file",
+      "file": "graphify/obsidian/._updateHUD().md",
+      "x": 2560,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_renderer_renderer_updateunitsprite",
+      "type": "file",
+      "file": "graphify/obsidian/._updateUnitSprite().md",
+      "x": 2160,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_renderer_renderer_constructor",
+      "type": "file",
+      "file": "graphify/obsidian/.constructor().md",
+      "x": 2360,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_renderer_renderer_render",
+      "type": "file",
+      "file": "graphify/obsidian/.render().md",
+      "x": 2560,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_renderer_renderer",
+      "type": "file",
+      "file": "graphify/obsidian/Renderer.md",
+      "x": 2160,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_users_2py_projects_aoe4simulator_h5_src_renderer_js",
+      "type": "file",
+      "file": "graphify/obsidian/Renderer.js.md",
+      "x": 2360,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g3",
+      "type": "group",
+      "label": "Specific Buildings",
+      "x": 3100,
+      "y": 0,
+      "width": 880,
+      "height": 620,
+      "color": "4"
+    },
+    {
+      "id": "n_building_archeryrange_constructor",
+      "type": "file",
+      "file": "graphify/obsidian/.constructor()_5.md",
+      "x": 3120,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_building_barracks_constructor",
+      "type": "file",
+      "file": "graphify/obsidian/.constructor()_4.md",
+      "x": 3320,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_building_farm_constructor",
+      "type": "file",
+      "file": "graphify/obsidian/.constructor()_8.md",
+      "x": 3520,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_building_house_constructor",
+      "type": "file",
+      "file": "graphify/obsidian/.constructor()_7.md",
+      "x": 3120,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_building_stable_constructor",
+      "type": "file",
+      "file": "graphify/obsidian/.constructor()_6.md",
+      "x": 3320,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_building_towncenter_constructor",
+      "type": "file",
+      "file": "graphify/obsidian/.constructor()_3.md",
+      "x": 3520,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_building_archeryrange",
+      "type": "file",
+      "file": "graphify/obsidian/ArcheryRange.md",
+      "x": 3120,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_building_barracks",
+      "type": "file",
+      "file": "graphify/obsidian/Barracks.md",
+      "x": 3320,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_users_2py_projects_aoe4simulator_h5_src_entities_building_js",
+      "type": "file",
+      "file": "graphify/obsidian/Building.js.md",
+      "x": 3520,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_building_farm",
+      "type": "file",
+      "file": "graphify/obsidian/Farm.md",
+      "x": 3120,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_building_house",
+      "type": "file",
+      "file": "graphify/obsidian/House.md",
+      "x": 3320,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_building_stable",
+      "type": "file",
+      "file": "graphify/obsidian/Stable.md",
+      "x": 3520,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_building_towncenter",
+      "type": "file",
+      "file": "graphify/obsidian/TownCenter.md",
+      "x": 3120,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g4",
+      "type": "group",
+      "label": "Micro AI",
+      "x": 4060,
+      "y": 0,
+      "width": 880,
+      "height": 520,
+      "color": "5"
+    },
+    {
+      "id": "n_microai_microai_center",
+      "type": "file",
+      "file": "graphify/obsidian/._center().md",
+      "x": 4080,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_microai_microai_microarcher",
+      "type": "file",
+      "file": "graphify/obsidian/._microArcher().md",
+      "x": 4280,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_microai_microai_microknight",
+      "type": "file",
+      "file": "graphify/obsidian/._microKnight().md",
+      "x": 4480,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_microai_microai_microspearman",
+      "type": "file",
+      "file": "graphify/obsidian/._microSpearman().md",
+      "x": 4080,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_microai_microai_movedir",
+      "type": "file",
+      "file": "graphify/obsidian/._moveDir().md",
+      "x": 4280,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_microai_microai_nearest",
+      "type": "file",
+      "file": "graphify/obsidian/._nearest().md",
+      "x": 4480,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_baseunit_baseunit_distanceto",
+      "type": "file",
+      "file": "graphify/obsidian/.distanceTo().md",
+      "x": 4080,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_microai_microai_update",
+      "type": "file",
+      "file": "graphify/obsidian/.update()_1.md",
+      "x": 4280,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_microai_microai",
+      "type": "file",
+      "file": "graphify/obsidian/MicroAI.md",
+      "x": 4480,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_users_2py_projects_aoe4simulator_h5_src_ai_microai_js",
+      "type": "file",
+      "file": "graphify/obsidian/MicroAI.js.md",
+      "x": 4080,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g5",
+      "type": "group",
+      "label": "Buildings & Macro AI",
+      "x": 0,
+      "y": 1000,
+      "width": 660,
+      "height": 420,
+      "color": "6"
+    },
+    {
+      "id": "n_building_building_constructor",
+      "type": "file",
+      "file": "graphify/obsidian/.constructor()_2.md",
+      "x": 20,
+      "y": 1080,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_gameengine_gameengine_placefoundation",
+      "type": "file",
+      "file": "graphify/obsidian/.placeFoundation().md",
+      "x": 220,
+      "y": 1080,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_building_building_queueunit",
+      "type": "file",
+      "file": "graphify/obsidian/.queueUnit().md",
+      "x": 420,
+      "y": 1080,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_building_building_tosnapshot",
+      "type": "file",
+      "file": "graphify/obsidian/.toSnapshot().md",
+      "x": 20,
+      "y": 1160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_macroai_macroai_update",
+      "type": "file",
+      "file": "graphify/obsidian/.update()_3.md",
+      "x": 220,
+      "y": 1160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_building_building",
+      "type": "file",
+      "file": "graphify/obsidian/Building.md",
+      "x": 420,
+      "y": 1160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_macroai_macroai",
+      "type": "file",
+      "file": "graphify/obsidian/MacroAI.md",
+      "x": 20,
+      "y": 1240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_users_2py_projects_aoe4simulator_h5_src_ai_macroai_js",
+      "type": "file",
+      "file": "graphify/obsidian/MacroAI.js.md",
+      "x": 220,
+      "y": 1240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g6",
+      "type": "group",
+      "label": "Main Setup & UI Commands",
+      "x": 1180,
+      "y": 1000,
+      "width": 660,
+      "height": 400,
+      "color": "1"
+    },
+    {
+      "id": "n_main_appendlog",
+      "type": "file",
+      "file": "graphify/obsidian/appendLog().md",
+      "x": 1200,
+      "y": 1080,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_main_clearlog",
+      "type": "file",
+      "file": "graphify/obsidian/clearLog().md",
+      "x": 1400,
+      "y": 1080,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_users_2py_projects_aoe4simulator_h5_src_main_js",
+      "type": "file",
+      "file": "graphify/obsidian/main.js.md",
+      "x": 1600,
+      "y": 1080,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_main_setspeed",
+      "type": "file",
+      "file": "graphify/obsidian/setSpeed().md",
+      "x": 1200,
+      "y": 1160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_main_startbattle",
+      "type": "file",
+      "file": "graphify/obsidian/startBattle().md",
+      "x": 1400,
+      "y": 1160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_main_togglepause",
+      "type": "file",
+      "file": "graphify/obsidian/togglePause().md",
+      "x": 1600,
+      "y": 1160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g7",
+      "type": "group",
+      "label": "Commander AI",
+      "x": 2140,
+      "y": 1000,
+      "width": 660,
+      "height": 400,
+      "color": "2"
+    },
+    {
+      "id": "n_commander_commander_groupbytype",
+      "type": "file",
+      "file": "graphify/obsidian/._groupByType().md",
+      "x": 2160,
+      "y": 1080,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_commander_commander_selectfocustarget",
+      "type": "file",
+      "file": "graphify/obsidian/._selectFocusTarget().md",
+      "x": 2360,
+      "y": 1080,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_commander_commander_issueorders",
+      "type": "file",
+      "file": "graphify/obsidian/.issueOrders().md",
+      "x": 2560,
+      "y": 1080,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_commander_commander",
+      "type": "file",
+      "file": "graphify/obsidian/Commander.md",
+      "x": 2160,
+      "y": 1160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_users_2py_projects_aoe4simulator_h5_src_ai_commander_js",
+      "type": "file",
+      "file": "graphify/obsidian/Commander.js.md",
+      "x": 2360,
+      "y": 1160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g8",
+      "type": "group",
+      "label": "Resources",
+      "x": 3100,
+      "y": 1000,
+      "width": 660,
+      "height": 400,
+      "color": "3"
+    },
+    {
+      "id": "n_resourcenode_resourcenode_constructor",
+      "type": "file",
+      "file": "graphify/obsidian/.constructor()_9.md",
+      "x": 3120,
+      "y": 1080,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_resourcenode_resourcenode_gather",
+      "type": "file",
+      "file": "graphify/obsidian/.gather().md",
+      "x": 3320,
+      "y": 1080,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_resourcenode_resourcenode_tosnapshot",
+      "type": "file",
+      "file": "graphify/obsidian/.toSnapshot()_1.md",
+      "x": 3520,
+      "y": 1080,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_resourcenode_resourcenode",
+      "type": "file",
+      "file": "graphify/obsidian/ResourceNode.md",
+      "x": 3120,
+      "y": 1160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_users_2py_projects_aoe4simulator_h5_src_entities_resourcenode_js",
+      "type": "file",
+      "file": "graphify/obsidian/ResourceNode.js.md",
+      "x": 3320,
+      "y": 1160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g9",
+      "type": "group",
+      "label": "Villager",
+      "x": 4060,
+      "y": 1000,
+      "width": 600,
+      "height": 400,
+      "color": "4"
+    },
+    {
+      "id": "n_villager_villager_constructor",
+      "type": "file",
+      "file": "graphify/obsidian/.constructor()_16.md",
+      "x": 4080,
+      "y": 1080,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_villager_villager_tosnapshot",
+      "type": "file",
+      "file": "graphify/obsidian/.toSnapshot()_3.md",
+      "x": 4280,
+      "y": 1080,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_villager_villager",
+      "type": "file",
+      "file": "graphify/obsidian/Villager.md",
+      "x": 4480,
+      "y": 1080,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_users_2py_projects_aoe4simulator_h5_src_entities_villager_js",
+      "type": "file",
+      "file": "graphify/obsidian/Villager.js.md",
+      "x": 4080,
+      "y": 1160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g10",
+      "type": "group",
+      "label": "Horseman",
+      "x": 0,
+      "y": 1500,
+      "width": 600,
+      "height": 400,
+      "color": "5"
+    },
+    {
+      "id": "n_horseman_horseman_constructor",
+      "type": "file",
+      "file": "graphify/obsidian/.constructor()_10.md",
+      "x": 20,
+      "y": 1580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_horseman_horseman",
+      "type": "file",
+      "file": "graphify/obsidian/Horseman.md",
+      "x": 220,
+      "y": 1580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_users_2py_projects_aoe4simulator_h5_src_entities_horseman_js",
+      "type": "file",
+      "file": "graphify/obsidian/Horseman.js.md",
+      "x": 420,
+      "y": 1580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g11",
+      "type": "group",
+      "label": "MenAtArms",
+      "x": 1180,
+      "y": 1500,
+      "width": 600,
+      "height": 400,
+      "color": "6"
+    },
+    {
+      "id": "n_menatarms_menatarms_constructor",
+      "type": "file",
+      "file": "graphify/obsidian/.constructor()_11.md",
+      "x": 1200,
+      "y": 1580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_menatarms_menatarms",
+      "type": "file",
+      "file": "graphify/obsidian/MenAtArms.md",
+      "x": 1400,
+      "y": 1580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_users_2py_projects_aoe4simulator_h5_src_entities_menatarms_js",
+      "type": "file",
+      "file": "graphify/obsidian/MenAtArms.js.md",
+      "x": 1600,
+      "y": 1580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g12",
+      "type": "group",
+      "label": "Spearman",
+      "x": 2140,
+      "y": 1500,
+      "width": 600,
+      "height": 400,
+      "color": "1"
+    },
+    {
+      "id": "n_spearman_spearman_constructor",
+      "type": "file",
+      "file": "graphify/obsidian/.constructor()_12.md",
+      "x": 2160,
+      "y": 1580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_spearman_spearman",
+      "type": "file",
+      "file": "graphify/obsidian/Spearman.md",
+      "x": 2360,
+      "y": 1580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_users_2py_projects_aoe4simulator_h5_src_entities_spearman_js",
+      "type": "file",
+      "file": "graphify/obsidian/Spearman.js.md",
+      "x": 2560,
+      "y": 1580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g13",
+      "type": "group",
+      "label": "Archer",
+      "x": 3100,
+      "y": 1500,
+      "width": 600,
+      "height": 400,
+      "color": "2"
+    },
+    {
+      "id": "n_archer_archer_constructor",
+      "type": "file",
+      "file": "graphify/obsidian/.constructor()_14.md",
+      "x": 3120,
+      "y": 1580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_archer_archer",
+      "type": "file",
+      "file": "graphify/obsidian/Archer.md",
+      "x": 3320,
+      "y": 1580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_users_2py_projects_aoe4simulator_h5_src_entities_archer_js",
+      "type": "file",
+      "file": "graphify/obsidian/Archer.js.md",
+      "x": 3520,
+      "y": 1580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g14",
+      "type": "group",
+      "label": "Crossbowman",
+      "x": 4060,
+      "y": 1500,
+      "width": 600,
+      "height": 400,
+      "color": "3"
+    },
+    {
+      "id": "n_crossbowman_crossbowman_constructor",
+      "type": "file",
+      "file": "graphify/obsidian/.constructor()_15.md",
+      "x": 4080,
+      "y": 1580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_crossbowman_crossbowman",
+      "type": "file",
+      "file": "graphify/obsidian/Crossbowman.md",
+      "x": 4280,
+      "y": 1580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_users_2py_projects_aoe4simulator_h5_src_entities_crossbowman_js",
+      "type": "file",
+      "file": "graphify/obsidian/Crossbowman.js.md",
+      "x": 4480,
+      "y": 1580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g15",
+      "type": "group",
+      "label": "Knight",
+      "x": 0,
+      "y": 1980,
+      "width": 600,
+      "height": 400,
+      "color": "4"
+    },
+    {
+      "id": "n_knight_knight_constructor",
+      "type": "file",
+      "file": "graphify/obsidian/.constructor()_17.md",
+      "x": 20,
+      "y": 2060,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_knight_knight",
+      "type": "file",
+      "file": "graphify/obsidian/Knight.md",
+      "x": 220,
+      "y": 2060,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_users_2py_projects_aoe4simulator_h5_src_entities_knight_js",
+      "type": "file",
+      "file": "graphify/obsidian/Knight.js.md",
+      "x": 420,
+      "y": 2060,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g16",
+      "type": "group",
+      "label": "UI & Dependencies",
+      "x": 1180,
+      "y": 1980,
+      "width": 600,
+      "height": 400,
+      "color": "5"
+    },
+    {
+      "id": "n_index_html",
+      "type": "file",
+      "file": "graphify/obsidian/Game UI Dashboard.md",
+      "x": 1200,
+      "y": 2060,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_pixijs_library",
+      "type": "file",
+      "file": "graphify/obsidian/PixiJS v7.md",
+      "x": 1400,
+      "y": 2060,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g17",
+      "type": "group",
+      "label": "Documentation",
+      "x": 2140,
+      "y": 1980,
+      "width": 600,
+      "height": 400,
+      "color": "6"
+    },
+    {
+      "id": "n_readme_md",
+      "type": "file",
+      "file": "graphify/obsidian/README.md",
+      "x": 2160,
+      "y": 2060,
+      "width": 180,
+      "height": 60
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_users_2py_projects_aoe4simulator_h5_src_renderer_js_renderer_renderer",
+      "fromNode": "n_users_2py_projects_aoe4simulator_h5_src_renderer_js",
+      "toNode": "n_renderer_renderer",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_renderer_renderer_renderer_renderer_constructor",
+      "fromNode": "n_renderer_renderer",
+      "toNode": "n_renderer_renderer_constructor",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_renderer_renderer_renderer_renderer_render",
+      "fromNode": "n_renderer_renderer",
+      "toNode": "n_renderer_renderer_render",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_renderer_renderer_renderer_renderer_drawgrid",
+      "fromNode": "n_renderer_renderer",
+      "toNode": "n_renderer_renderer_drawgrid",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_renderer_renderer_renderer_renderer_drawresourcenodes",
+      "fromNode": "n_renderer_renderer",
+      "toNode": "n_renderer_renderer_drawresourcenodes",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_renderer_renderer_renderer_renderer_drawobstacles",
+      "fromNode": "n_renderer_renderer",
+      "toNode": "n_renderer_renderer_drawobstacles",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_renderer_renderer_renderer_renderer_inithud",
+      "fromNode": "n_renderer_renderer",
+      "toNode": "n_renderer_renderer_inithud",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_renderer_renderer_renderer_renderer_updatehud",
+      "fromNode": "n_renderer_renderer",
+      "toNode": "n_renderer_renderer_updatehud",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_renderer_renderer_renderer_renderer_createunitsprite",
+      "fromNode": "n_renderer_renderer",
+      "toNode": "n_renderer_renderer_createunitsprite",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_renderer_renderer_renderer_renderer_updateunitsprite",
+      "fromNode": "n_renderer_renderer",
+      "toNode": "n_renderer_renderer_updateunitsprite",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_renderer_renderer_renderer_renderer_adddamagetext",
+      "fromNode": "n_renderer_renderer",
+      "toNode": "n_renderer_renderer_adddamagetext",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_renderer_renderer_renderer_renderer_addparticle",
+      "fromNode": "n_renderer_renderer",
+      "toNode": "n_renderer_renderer_addparticle",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_renderer_renderer_renderer_renderer_updateeffects",
+      "fromNode": "n_renderer_renderer",
+      "toNode": "n_renderer_renderer_updateeffects",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_renderer_renderer_constructor_renderer_renderer_drawgrid",
+      "fromNode": "n_renderer_renderer_constructor",
+      "toNode": "n_renderer_renderer_drawgrid",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_renderer_renderer_constructor_renderer_renderer_inithud",
+      "fromNode": "n_renderer_renderer_constructor",
+      "toNode": "n_renderer_renderer_inithud",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_renderer_renderer_render_renderer_renderer_drawresourcenodes",
+      "fromNode": "n_renderer_renderer_render",
+      "toNode": "n_renderer_renderer_drawresourcenodes",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_renderer_renderer_render_renderer_renderer_drawobstacles",
+      "fromNode": "n_renderer_renderer_render",
+      "toNode": "n_renderer_renderer_drawobstacles",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_renderer_renderer_render_renderer_renderer_createunitsprite",
+      "fromNode": "n_renderer_renderer_render",
+      "toNode": "n_renderer_renderer_createunitsprite",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_renderer_renderer_render_renderer_renderer_updateunitsprite",
+      "fromNode": "n_renderer_renderer_render",
+      "toNode": "n_renderer_renderer_updateunitsprite",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_renderer_renderer_render_renderer_renderer_adddamagetext",
+      "fromNode": "n_renderer_renderer_render",
+      "toNode": "n_renderer_renderer_adddamagetext",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_renderer_renderer_render_renderer_renderer_addparticle",
+      "fromNode": "n_renderer_renderer_render",
+      "toNode": "n_renderer_renderer_addparticle",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_renderer_renderer_render_renderer_renderer_updatehud",
+      "fromNode": "n_renderer_renderer_render",
+      "toNode": "n_renderer_renderer_updatehud",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_renderer_renderer_render_main_gameloop",
+      "fromNode": "n_renderer_renderer_render",
+      "toNode": "n_main_gameloop",
+      "label": "calls [INFERRED]"
+    },
+    {
+      "id": "e_users_2py_projects_aoe4simulator_h5_src_gameengine_js_gameengine_gameengine",
+      "fromNode": "n_users_2py_projects_aoe4simulator_h5_src_gameengine_js",
+      "toNode": "n_gameengine_gameengine",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_gameengine_gameengine_gameengine_gameengine_constructor",
+      "fromNode": "n_gameengine_gameengine",
+      "toNode": "n_gameengine_gameengine_constructor",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_gameengine_gameengine_gameengine_gameengine_setupbattle",
+      "fromNode": "n_gameengine_gameengine",
+      "toNode": "n_gameengine_gameengine_setupbattle",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_gameengine_gameengine_gameengine_gameengine_setupbase",
+      "fromNode": "n_gameengine_gameengine",
+      "toNode": "n_gameengine_gameengine_setupbase",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_gameengine_gameengine_gameengine_gameengine_setupobstacles",
+      "fromNode": "n_gameengine_gameengine",
+      "toNode": "n_gameengine_gameengine_setupobstacles",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_gameengine_gameengine_gameengine_gameengine_spawnarmy",
+      "fromNode": "n_gameengine_gameengine",
+      "toNode": "n_gameengine_gameengine_spawnarmy",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_gameengine_gameengine_gameengine_gameengine_queuemanualtask",
+      "fromNode": "n_gameengine_gameengine",
+      "toNode": "n_gameengine_gameengine_queuemanualtask",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_gameengine_gameengine_gameengine_gameengine_update",
+      "fromNode": "n_gameengine_gameengine",
+      "toNode": "n_gameengine_gameengine_update",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_gameengine_gameengine_gameengine_gameengine_processbuildingproduction",
+      "fromNode": "n_gameengine_gameengine",
+      "toNode": "n_gameengine_gameengine_processbuildingproduction",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_gameengine_gameengine_gameengine_gameengine_spawnunitfrombuilding",
+      "fromNode": "n_gameengine_gameengine",
+      "toNode": "n_gameengine_gameengine_spawnunitfrombuilding",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_gameengine_gameengine_gameengine_gameengine_getpopulation",
+      "fromNode": "n_gameengine_gameengine",
+      "toNode": "n_gameengine_gameengine_getpopulation",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_gameengine_gameengine_gameengine_gameengine_getpopulationcap",
+      "fromNode": "n_gameengine_gameengine",
+      "toNode": "n_gameengine_gameengine_getpopulationcap",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_gameengine_gameengine_gameengine_gameengine_placefoundation",
+      "fromNode": "n_gameengine_gameengine",
+      "toNode": "n_gameengine_gameengine_placefoundation",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_gameengine_gameengine_gameengine_gameengine_resolvecollisions",
+      "fromNode": "n_gameengine_gameengine",
+      "toNode": "n_gameengine_gameengine_resolvecollisions",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_gameengine_gameengine_gameengine_gameengine_checkvictory",
+      "fromNode": "n_gameengine_gameengine",
+      "toNode": "n_gameengine_gameengine_checkvictory",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_gameengine_gameengine_gameengine_gameengine_log",
+      "fromNode": "n_gameengine_gameengine",
+      "toNode": "n_gameengine_gameengine_log",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_gameengine_gameengine_gameengine_gameengine_generatesummary",
+      "fromNode": "n_gameengine_gameengine",
+      "toNode": "n_gameengine_gameengine_generatesummary",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_gameengine_gameengine_gameengine_gameengine_teamstats",
+      "fromNode": "n_gameengine_gameengine",
+      "toNode": "n_gameengine_gameengine_teamstats",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_gameengine_gameengine_gameengine_gameengine_cleanupdead",
+      "fromNode": "n_gameengine_gameengine",
+      "toNode": "n_gameengine_gameengine_cleanupdead",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_gameengine_gameengine_gameengine_gameengine_setupneutralresources",
+      "fromNode": "n_gameengine_gameengine",
+      "toNode": "n_gameengine_gameengine_setupneutralresources",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_gameengine_gameengine_gameengine_gameengine_getsnapshot",
+      "fromNode": "n_gameengine_gameengine",
+      "toNode": "n_gameengine_gameengine_getsnapshot",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_gameengine_gameengine_setupbattle_gameengine_gameengine_setupobstacles",
+      "fromNode": "n_gameengine_gameengine_setupbattle",
+      "toNode": "n_gameengine_gameengine_setupobstacles",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_gameengine_gameengine_setupbattle_gameengine_gameengine_setupbase",
+      "fromNode": "n_gameengine_gameengine_setupbattle",
+      "toNode": "n_gameengine_gameengine_setupbase",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_gameengine_gameengine_setupbattle_gameengine_gameengine_setupneutralresources",
+      "fromNode": "n_gameengine_gameengine_setupbattle",
+      "toNode": "n_gameengine_gameengine_setupneutralresources",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_gameengine_gameengine_setupbattle_gameengine_gameengine_log",
+      "fromNode": "n_gameengine_gameengine_setupbattle",
+      "toNode": "n_gameengine_gameengine_log",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_gameengine_gameengine_setupbattle_main_startbattle",
+      "fromNode": "n_gameengine_gameengine_setupbattle",
+      "toNode": "n_main_startbattle",
+      "label": "calls [INFERRED]"
+    },
+    {
+      "id": "e_gameengine_gameengine_update_gameengine_gameengine_processbuildingproduction",
+      "fromNode": "n_gameengine_gameengine_update",
+      "toNode": "n_gameengine_gameengine_processbuildingproduction",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_gameengine_gameengine_update_gameengine_gameengine_log",
+      "fromNode": "n_gameengine_gameengine_update",
+      "toNode": "n_gameengine_gameengine_log",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_gameengine_gameengine_update_gameengine_gameengine_resolvecollisions",
+      "fromNode": "n_gameengine_gameengine_update",
+      "toNode": "n_gameengine_gameengine_resolvecollisions",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_gameengine_gameengine_update_gameengine_gameengine_cleanupdead",
+      "fromNode": "n_gameengine_gameengine_update",
+      "toNode": "n_gameengine_gameengine_cleanupdead",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_gameengine_gameengine_update_gameengine_gameengine_checkvictory",
+      "fromNode": "n_gameengine_gameengine_update",
+      "toNode": "n_gameengine_gameengine_checkvictory",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_gameengine_gameengine_update_commander_commander_issueorders",
+      "fromNode": "n_gameengine_gameengine_update",
+      "toNode": "n_commander_commander_issueorders",
+      "label": "calls [INFERRED]"
+    },
+    {
+      "id": "e_gameengine_gameengine_update_baseunit_baseunit_distanceto",
+      "fromNode": "n_gameengine_gameengine_update",
+      "toNode": "n_baseunit_baseunit_distanceto",
+      "label": "calls [INFERRED]"
+    },
+    {
+      "id": "e_gameengine_gameengine_update_baseunit_baseunit_takedamage",
+      "fromNode": "n_gameengine_gameengine_update",
+      "toNode": "n_baseunit_baseunit_takedamage",
+      "label": "calls [INFERRED]"
+    },
+    {
+      "id": "e_gameengine_gameengine_update_resourcenode_resourcenode_gather",
+      "fromNode": "n_gameengine_gameengine_update",
+      "toNode": "n_resourcenode_resourcenode_gather",
+      "label": "calls [INFERRED]"
+    },
+    {
+      "id": "e_gameengine_gameengine_processbuildingproduction_gameengine_gameengine_spawnunitfrombuilding",
+      "fromNode": "n_gameengine_gameengine_processbuildingproduction",
+      "toNode": "n_gameengine_gameengine_spawnunitfrombuilding",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_gameengine_gameengine_spawnunitfrombuilding_gameengine_gameengine_getpopulation",
+      "fromNode": "n_gameengine_gameengine_spawnunitfrombuilding",
+      "toNode": "n_gameengine_gameengine_getpopulation",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_gameengine_gameengine_spawnunitfrombuilding_gameengine_gameengine_getpopulationcap",
+      "fromNode": "n_gameengine_gameengine_spawnunitfrombuilding",
+      "toNode": "n_gameengine_gameengine_getpopulationcap",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_gameengine_gameengine_getpopulation_gameengine_gameengine_getsnapshot",
+      "fromNode": "n_gameengine_gameengine_getpopulation",
+      "toNode": "n_gameengine_gameengine_getsnapshot",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_gameengine_gameengine_getpopulationcap_gameengine_gameengine_getsnapshot",
+      "fromNode": "n_gameengine_gameengine_getpopulationcap",
+      "toNode": "n_gameengine_gameengine_getsnapshot",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_gameengine_gameengine_placefoundation_macroai_macroai_update",
+      "fromNode": "n_gameengine_gameengine_placefoundation",
+      "toNode": "n_macroai_macroai_update",
+      "label": "calls [INFERRED]"
+    },
+    {
+      "id": "e_gameengine_gameengine_checkvictory_gameengine_gameengine_log",
+      "fromNode": "n_gameengine_gameengine_checkvictory",
+      "toNode": "n_gameengine_gameengine_log",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_gameengine_gameengine_checkvictory_gameengine_gameengine_generatesummary",
+      "fromNode": "n_gameengine_gameengine_checkvictory",
+      "toNode": "n_gameengine_gameengine_generatesummary",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_gameengine_gameengine_generatesummary_gameengine_gameengine_teamstats",
+      "fromNode": "n_gameengine_gameengine_generatesummary",
+      "toNode": "n_gameengine_gameengine_teamstats",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_gameengine_gameengine_getsnapshot_main_gameloop",
+      "fromNode": "n_gameengine_gameengine_getsnapshot",
+      "toNode": "n_main_gameloop",
+      "label": "calls [INFERRED]"
+    },
+    {
+      "id": "e_users_2py_projects_aoe4simulator_h5_src_main_js_main_gameloop",
+      "fromNode": "n_users_2py_projects_aoe4simulator_h5_src_main_js",
+      "toNode": "n_main_gameloop",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_users_2py_projects_aoe4simulator_h5_src_main_js_main_startbattle",
+      "fromNode": "n_users_2py_projects_aoe4simulator_h5_src_main_js",
+      "toNode": "n_main_startbattle",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_users_2py_projects_aoe4simulator_h5_src_main_js_main_togglepause",
+      "fromNode": "n_users_2py_projects_aoe4simulator_h5_src_main_js",
+      "toNode": "n_main_togglepause",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_users_2py_projects_aoe4simulator_h5_src_main_js_main_setspeed",
+      "fromNode": "n_users_2py_projects_aoe4simulator_h5_src_main_js",
+      "toNode": "n_main_setspeed",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_users_2py_projects_aoe4simulator_h5_src_main_js_main_appendlog",
+      "fromNode": "n_users_2py_projects_aoe4simulator_h5_src_main_js",
+      "toNode": "n_main_appendlog",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_users_2py_projects_aoe4simulator_h5_src_main_js_main_clearlog",
+      "fromNode": "n_users_2py_projects_aoe4simulator_h5_src_main_js",
+      "toNode": "n_main_clearlog",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_main_gameloop_macroai_macroai_update",
+      "fromNode": "n_main_gameloop",
+      "toNode": "n_macroai_macroai_update",
+      "label": "calls [INFERRED]"
+    },
+    {
+      "id": "e_main_startbattle_main_clearlog",
+      "fromNode": "n_main_startbattle",
+      "toNode": "n_main_clearlog",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_main_startbattle_main_appendlog",
+      "fromNode": "n_main_startbattle",
+      "toNode": "n_main_appendlog",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_users_2py_projects_aoe4simulator_h5_src_ai_microai_js_microai_microai",
+      "fromNode": "n_users_2py_projects_aoe4simulator_h5_src_ai_microai_js",
+      "toNode": "n_microai_microai",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_microai_microai_microai_microai_update",
+      "fromNode": "n_microai_microai",
+      "toNode": "n_microai_microai_update",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_microai_microai_microai_microai_microarcher",
+      "fromNode": "n_microai_microai",
+      "toNode": "n_microai_microai_microarcher",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_microai_microai_microai_microai_microknight",
+      "fromNode": "n_microai_microai",
+      "toNode": "n_microai_microai_microknight",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_microai_microai_microai_microai_microspearman",
+      "fromNode": "n_microai_microai",
+      "toNode": "n_microai_microai_microspearman",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_microai_microai_microai_microai_movedir",
+      "fromNode": "n_microai_microai",
+      "toNode": "n_microai_microai_movedir",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_microai_microai_microai_microai_nearest",
+      "fromNode": "n_microai_microai",
+      "toNode": "n_microai_microai_nearest",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_microai_microai_microai_microai_center",
+      "fromNode": "n_microai_microai",
+      "toNode": "n_microai_microai_center",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_microai_microai_update_microai_microai_center",
+      "fromNode": "n_microai_microai_update",
+      "toNode": "n_microai_microai_center",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_microai_microai_update_microai_microai_microarcher",
+      "fromNode": "n_microai_microai_update",
+      "toNode": "n_microai_microai_microarcher",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_microai_microai_update_microai_microai_microknight",
+      "fromNode": "n_microai_microai_update",
+      "toNode": "n_microai_microai_microknight",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_microai_microai_update_microai_microai_microspearman",
+      "fromNode": "n_microai_microai_update",
+      "toNode": "n_microai_microai_microspearman",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_microai_microai_microarcher_microai_microai_nearest",
+      "fromNode": "n_microai_microai_microarcher",
+      "toNode": "n_microai_microai_nearest",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_microai_microai_microarcher_microai_microai_movedir",
+      "fromNode": "n_microai_microai_microarcher",
+      "toNode": "n_microai_microai_movedir",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_microai_microai_microarcher_baseunit_baseunit_distanceto",
+      "fromNode": "n_microai_microai_microarcher",
+      "toNode": "n_baseunit_baseunit_distanceto",
+      "label": "calls [INFERRED]"
+    },
+    {
+      "id": "e_microai_microai_microknight_microai_microai_nearest",
+      "fromNode": "n_microai_microai_microknight",
+      "toNode": "n_microai_microai_nearest",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_microai_microai_microknight_microai_microai_movedir",
+      "fromNode": "n_microai_microai_microknight",
+      "toNode": "n_microai_microai_movedir",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_microai_microai_microknight_baseunit_baseunit_distanceto",
+      "fromNode": "n_microai_microai_microknight",
+      "toNode": "n_baseunit_baseunit_distanceto",
+      "label": "calls [INFERRED]"
+    },
+    {
+      "id": "e_microai_microai_microspearman_microai_microai_nearest",
+      "fromNode": "n_microai_microai_microspearman",
+      "toNode": "n_microai_microai_nearest",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_microai_microai_microspearman_baseunit_baseunit_distanceto",
+      "fromNode": "n_microai_microai_microspearman",
+      "toNode": "n_baseunit_baseunit_distanceto",
+      "label": "calls [INFERRED]"
+    },
+    {
+      "id": "e_microai_microai_nearest_baseunit_baseunit_distanceto",
+      "fromNode": "n_microai_microai_nearest",
+      "toNode": "n_baseunit_baseunit_distanceto",
+      "label": "calls [INFERRED]"
+    },
+    {
+      "id": "e_users_2py_projects_aoe4simulator_h5_src_ai_commander_js_commander_commander",
+      "fromNode": "n_users_2py_projects_aoe4simulator_h5_src_ai_commander_js",
+      "toNode": "n_commander_commander",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_commander_commander_commander_commander_issueorders",
+      "fromNode": "n_commander_commander",
+      "toNode": "n_commander_commander_issueorders",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_commander_commander_commander_commander_groupbytype",
+      "fromNode": "n_commander_commander",
+      "toNode": "n_commander_commander_groupbytype",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_commander_commander_commander_commander_selectfocustarget",
+      "fromNode": "n_commander_commander",
+      "toNode": "n_commander_commander_selectfocustarget",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_commander_commander_issueorders_commander_commander_groupbytype",
+      "fromNode": "n_commander_commander_issueorders",
+      "toNode": "n_commander_commander_groupbytype",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_commander_commander_issueorders_commander_commander_selectfocustarget",
+      "fromNode": "n_commander_commander_issueorders",
+      "toNode": "n_commander_commander_selectfocustarget",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_commander_commander_selectfocustarget_baseunit_baseunit_distanceto",
+      "fromNode": "n_commander_commander_selectfocustarget",
+      "toNode": "n_baseunit_baseunit_distanceto",
+      "label": "calls [INFERRED]"
+    },
+    {
+      "id": "e_users_2py_projects_aoe4simulator_h5_src_ai_statemachine_js_statemachine_statemachine",
+      "fromNode": "n_users_2py_projects_aoe4simulator_h5_src_ai_statemachine_js",
+      "toNode": "n_statemachine_statemachine",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_statemachine_statemachine_statemachine_statemachine_update",
+      "fromNode": "n_statemachine_statemachine",
+      "toNode": "n_statemachine_statemachine_update",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_statemachine_statemachine_statemachine_statemachine_handleidle",
+      "fromNode": "n_statemachine_statemachine",
+      "toNode": "n_statemachine_statemachine_handleidle",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_statemachine_statemachine_statemachine_statemachine_handleseeking",
+      "fromNode": "n_statemachine_statemachine",
+      "toNode": "n_statemachine_statemachine_handleseeking",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_statemachine_statemachine_statemachine_statemachine_handleattacking",
+      "fromNode": "n_statemachine_statemachine",
+      "toNode": "n_statemachine_statemachine_handleattacking",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_statemachine_statemachine_statemachine_statemachine_findbesttarget",
+      "fromNode": "n_statemachine_statemachine",
+      "toNode": "n_statemachine_statemachine_findbesttarget",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_statemachine_statemachine_update_statemachine_statemachine_handleidle",
+      "fromNode": "n_statemachine_statemachine_update",
+      "toNode": "n_statemachine_statemachine_handleidle",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_statemachine_statemachine_update_statemachine_statemachine_handleseeking",
+      "fromNode": "n_statemachine_statemachine_update",
+      "toNode": "n_statemachine_statemachine_handleseeking",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_statemachine_statemachine_update_statemachine_statemachine_handleattacking",
+      "fromNode": "n_statemachine_statemachine_update",
+      "toNode": "n_statemachine_statemachine_handleattacking",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_statemachine_statemachine_handleidle_statemachine_statemachine_findbesttarget",
+      "fromNode": "n_statemachine_statemachine_handleidle",
+      "toNode": "n_statemachine_statemachine_findbesttarget",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_statemachine_statemachine_handleseeking_baseunit_baseunit_isinrange",
+      "fromNode": "n_statemachine_statemachine_handleseeking",
+      "toNode": "n_baseunit_baseunit_isinrange",
+      "label": "calls [INFERRED]"
+    },
+    {
+      "id": "e_statemachine_statemachine_handleseeking_baseunit_baseunit_movetoward",
+      "fromNode": "n_statemachine_statemachine_handleseeking",
+      "toNode": "n_baseunit_baseunit_movetoward",
+      "label": "calls [INFERRED]"
+    },
+    {
+      "id": "e_statemachine_statemachine_handleattacking_baseunit_baseunit_isinrange",
+      "fromNode": "n_statemachine_statemachine_handleattacking",
+      "toNode": "n_baseunit_baseunit_isinrange",
+      "label": "calls [INFERRED]"
+    },
+    {
+      "id": "e_statemachine_statemachine_handleattacking_baseunit_baseunit_calculatedamage",
+      "fromNode": "n_statemachine_statemachine_handleattacking",
+      "toNode": "n_baseunit_baseunit_calculatedamage",
+      "label": "calls [INFERRED]"
+    },
+    {
+      "id": "e_statemachine_statemachine_handleattacking_baseunit_baseunit_takedamage",
+      "fromNode": "n_statemachine_statemachine_handleattacking",
+      "toNode": "n_baseunit_baseunit_takedamage",
+      "label": "calls [INFERRED]"
+    },
+    {
+      "id": "e_statemachine_statemachine_findbesttarget_baseunit_baseunit_distanceto",
+      "fromNode": "n_statemachine_statemachine_findbesttarget",
+      "toNode": "n_baseunit_baseunit_distanceto",
+      "label": "calls [INFERRED]"
+    },
+    {
+      "id": "e_users_2py_projects_aoe4simulator_h5_src_ai_macroai_js_macroai_macroai",
+      "fromNode": "n_users_2py_projects_aoe4simulator_h5_src_ai_macroai_js",
+      "toNode": "n_macroai_macroai",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_macroai_macroai_macroai_macroai_update",
+      "fromNode": "n_macroai_macroai",
+      "toNode": "n_macroai_macroai_update",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_macroai_macroai_update_baseunit_baseunit_distanceto",
+      "fromNode": "n_macroai_macroai_update",
+      "toNode": "n_baseunit_baseunit_distanceto",
+      "label": "calls [INFERRED]"
+    },
+    {
+      "id": "e_macroai_macroai_update_baseunit_baseunit_movetoward",
+      "fromNode": "n_macroai_macroai_update",
+      "toNode": "n_baseunit_baseunit_movetoward",
+      "label": "calls [INFERRED]"
+    },
+    {
+      "id": "e_macroai_macroai_update_building_building_queueunit",
+      "fromNode": "n_macroai_macroai_update",
+      "toNode": "n_building_building_queueunit",
+      "label": "calls [INFERRED]"
+    },
+    {
+      "id": "e_users_2py_projects_aoe4simulator_h5_src_entities_building_js_building_building",
+      "fromNode": "n_users_2py_projects_aoe4simulator_h5_src_entities_building_js",
+      "toNode": "n_building_building",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_users_2py_projects_aoe4simulator_h5_src_entities_building_js_building_towncenter",
+      "fromNode": "n_users_2py_projects_aoe4simulator_h5_src_entities_building_js",
+      "toNode": "n_building_towncenter",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_users_2py_projects_aoe4simulator_h5_src_entities_building_js_building_barracks",
+      "fromNode": "n_users_2py_projects_aoe4simulator_h5_src_entities_building_js",
+      "toNode": "n_building_barracks",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_users_2py_projects_aoe4simulator_h5_src_entities_building_js_building_archeryrange",
+      "fromNode": "n_users_2py_projects_aoe4simulator_h5_src_entities_building_js",
+      "toNode": "n_building_archeryrange",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_users_2py_projects_aoe4simulator_h5_src_entities_building_js_building_stable",
+      "fromNode": "n_users_2py_projects_aoe4simulator_h5_src_entities_building_js",
+      "toNode": "n_building_stable",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_users_2py_projects_aoe4simulator_h5_src_entities_building_js_building_house",
+      "fromNode": "n_users_2py_projects_aoe4simulator_h5_src_entities_building_js",
+      "toNode": "n_building_house",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_users_2py_projects_aoe4simulator_h5_src_entities_building_js_building_farm",
+      "fromNode": "n_users_2py_projects_aoe4simulator_h5_src_entities_building_js",
+      "toNode": "n_building_farm",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_building_building_building_building_constructor",
+      "fromNode": "n_building_building",
+      "toNode": "n_building_building_constructor",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_building_building_building_building_queueunit",
+      "fromNode": "n_building_building",
+      "toNode": "n_building_building_queueunit",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_building_building_building_building_tosnapshot",
+      "fromNode": "n_building_building",
+      "toNode": "n_building_building_tosnapshot",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_building_towncenter_building_towncenter_constructor",
+      "fromNode": "n_building_towncenter",
+      "toNode": "n_building_towncenter_constructor",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_building_barracks_building_barracks_constructor",
+      "fromNode": "n_building_barracks",
+      "toNode": "n_building_barracks_constructor",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_building_archeryrange_building_archeryrange_constructor",
+      "fromNode": "n_building_archeryrange",
+      "toNode": "n_building_archeryrange_constructor",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_building_stable_building_stable_constructor",
+      "fromNode": "n_building_stable",
+      "toNode": "n_building_stable_constructor",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_building_house_building_house_constructor",
+      "fromNode": "n_building_house",
+      "toNode": "n_building_house_constructor",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_building_farm_building_farm_constructor",
+      "fromNode": "n_building_farm",
+      "toNode": "n_building_farm_constructor",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_users_2py_projects_aoe4simulator_h5_src_entities_resourcenode_js_resourcenode_resourcenode",
+      "fromNode": "n_users_2py_projects_aoe4simulator_h5_src_entities_resourcenode_js",
+      "toNode": "n_resourcenode_resourcenode",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_resourcenode_resourcenode_resourcenode_resourcenode_constructor",
+      "fromNode": "n_resourcenode_resourcenode",
+      "toNode": "n_resourcenode_resourcenode_constructor",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_resourcenode_resourcenode_resourcenode_resourcenode_gather",
+      "fromNode": "n_resourcenode_resourcenode",
+      "toNode": "n_resourcenode_resourcenode_gather",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_resourcenode_resourcenode_resourcenode_resourcenode_tosnapshot",
+      "fromNode": "n_resourcenode_resourcenode",
+      "toNode": "n_resourcenode_resourcenode_tosnapshot",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_users_2py_projects_aoe4simulator_h5_src_entities_horseman_js_horseman_horseman",
+      "fromNode": "n_users_2py_projects_aoe4simulator_h5_src_entities_horseman_js",
+      "toNode": "n_horseman_horseman",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_horseman_horseman_horseman_horseman_constructor",
+      "fromNode": "n_horseman_horseman",
+      "toNode": "n_horseman_horseman_constructor",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_users_2py_projects_aoe4simulator_h5_src_entities_menatarms_js_menatarms_menatarms",
+      "fromNode": "n_users_2py_projects_aoe4simulator_h5_src_entities_menatarms_js",
+      "toNode": "n_menatarms_menatarms",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_menatarms_menatarms_menatarms_menatarms_constructor",
+      "fromNode": "n_menatarms_menatarms",
+      "toNode": "n_menatarms_menatarms_constructor",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_users_2py_projects_aoe4simulator_h5_src_entities_spearman_js_spearman_spearman",
+      "fromNode": "n_users_2py_projects_aoe4simulator_h5_src_entities_spearman_js",
+      "toNode": "n_spearman_spearman",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_spearman_spearman_spearman_spearman_constructor",
+      "fromNode": "n_spearman_spearman",
+      "toNode": "n_spearman_spearman_constructor",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_users_2py_projects_aoe4simulator_h5_src_entities_baseunit_js_baseunit_baseunit",
+      "fromNode": "n_users_2py_projects_aoe4simulator_h5_src_entities_baseunit_js",
+      "toNode": "n_baseunit_baseunit",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_baseunit_baseunit_baseunit_baseunit_constructor",
+      "fromNode": "n_baseunit_baseunit",
+      "toNode": "n_baseunit_baseunit_constructor",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_baseunit_baseunit_baseunit_baseunit_distanceto",
+      "fromNode": "n_baseunit_baseunit",
+      "toNode": "n_baseunit_baseunit_distanceto",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_baseunit_baseunit_baseunit_baseunit_isinrange",
+      "fromNode": "n_baseunit_baseunit",
+      "toNode": "n_baseunit_baseunit_isinrange",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_baseunit_baseunit_baseunit_baseunit_calculatedamage",
+      "fromNode": "n_baseunit_baseunit",
+      "toNode": "n_baseunit_baseunit_calculatedamage",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_baseunit_baseunit_baseunit_baseunit_takedamage",
+      "fromNode": "n_baseunit_baseunit",
+      "toNode": "n_baseunit_baseunit_takedamage",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_baseunit_baseunit_baseunit_baseunit_movetoward",
+      "fromNode": "n_baseunit_baseunit",
+      "toNode": "n_baseunit_baseunit_movetoward",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_baseunit_baseunit_baseunit_baseunit_tosnapshot",
+      "fromNode": "n_baseunit_baseunit",
+      "toNode": "n_baseunit_baseunit_tosnapshot",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_baseunit_baseunit_distanceto_baseunit_baseunit_isinrange",
+      "fromNode": "n_baseunit_baseunit_distanceto",
+      "toNode": "n_baseunit_baseunit_isinrange",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_users_2py_projects_aoe4simulator_h5_src_entities_archer_js_archer_archer",
+      "fromNode": "n_users_2py_projects_aoe4simulator_h5_src_entities_archer_js",
+      "toNode": "n_archer_archer",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_archer_archer_archer_archer_constructor",
+      "fromNode": "n_archer_archer",
+      "toNode": "n_archer_archer_constructor",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_users_2py_projects_aoe4simulator_h5_src_entities_crossbowman_js_crossbowman_crossbowman",
+      "fromNode": "n_users_2py_projects_aoe4simulator_h5_src_entities_crossbowman_js",
+      "toNode": "n_crossbowman_crossbowman",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_crossbowman_crossbowman_crossbowman_crossbowman_constructor",
+      "fromNode": "n_crossbowman_crossbowman",
+      "toNode": "n_crossbowman_crossbowman_constructor",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_users_2py_projects_aoe4simulator_h5_src_entities_villager_js_villager_villager",
+      "fromNode": "n_users_2py_projects_aoe4simulator_h5_src_entities_villager_js",
+      "toNode": "n_villager_villager",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_villager_villager_villager_villager_constructor",
+      "fromNode": "n_villager_villager",
+      "toNode": "n_villager_villager_constructor",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_villager_villager_villager_villager_tosnapshot",
+      "fromNode": "n_villager_villager",
+      "toNode": "n_villager_villager_tosnapshot",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_users_2py_projects_aoe4simulator_h5_src_entities_knight_js_knight_knight",
+      "fromNode": "n_users_2py_projects_aoe4simulator_h5_src_entities_knight_js",
+      "toNode": "n_knight_knight",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_knight_knight_knight_knight_constructor",
+      "fromNode": "n_knight_knight",
+      "toNode": "n_knight_knight_constructor",
+      "label": "method [EXTRACTED]"
+    },
+    {
+      "id": "e_index_html_pixijs_library",
+      "fromNode": "n_index_html",
+      "toNode": "n_pixijs_library",
+      "label": "references [EXTRACTED]"
+    }
+  ]
+}

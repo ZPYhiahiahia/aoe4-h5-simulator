@@ -1,0 +1,25 @@
+{
+  "name": "aoe4simulator_h5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZPYhiahiahia/aoe4-h5-simulator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/ZPYhiahiahia/aoe4-h5-simulator/issues"
+  },
+  "homepage": "https://github.com/ZPYhiahiahia/aoe4-h5-simulator#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  }
+}
